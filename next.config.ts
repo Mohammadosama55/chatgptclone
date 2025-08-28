@@ -2,23 +2,16 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   typescript: {
-    ignoreBuildErrors: true,
-  },
-  // Disable Next.js hot reload, handled by nodemon for development
-  reactStrictMode: false,
-  webpack: (config, { dev }) => {
-    if (dev) {
-      // Disable webpack hot module replacement
-      config.watchOptions = {
-        ignored: ['**/*'], // Ignore all file changes
-      };
-    }
-    return config;
+    ignoreBuildErrors: false,
   },
   eslint: {
-    // Ignore ESLint errors during build
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs']
+  },
+  // Enable standalone output for better deployment
+  output: 'standalone',
 };
 
 export default nextConfig;

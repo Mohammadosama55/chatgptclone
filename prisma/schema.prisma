@@ -1,12 +1,12 @@
 // Prisma schema for ChatAI application
-// Database: SQLite for development, can be changed for production
+// Database: PostgreSQL for production deployment on Render
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 

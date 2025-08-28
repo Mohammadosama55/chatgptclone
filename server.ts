@@ -1,3 +1,7 @@
+// NOTE: This custom server is only used for local development
+// For production deployment on Render, we use standard Next.js deployment
+// Real-time features are handled via /src/pages/api/socketio.ts
+
 // Custom Next.js server with Socket.IO integration
 import { setupSocket } from '@/lib/socket';
 import { createServer } from 'http';
